@@ -1,3 +1,16 @@
+/**
+ * VARIABLES
+**/
+
+:root {
+    --color--dark: #212529;
+}
+
+/**
+ * FORM ELEMENTS
+**/
+
 button {
-    font-weight: 300!important;
+    font-weight: 300;
+    background-color: var(--color--dark);
 }

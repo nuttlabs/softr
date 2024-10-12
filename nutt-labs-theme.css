@@ -34,3 +34,11 @@ h2 span {
 .MuiDrawer-root hr {
  margin-top: 20px!important;
 }
+
+/**
+ * LISTS: GRIDS
+**/
+
+div[id*="grid"] div[role=list] {
+ gap: 26px!important;
+}

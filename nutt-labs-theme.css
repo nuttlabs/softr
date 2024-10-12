@@ -3,14 +3,34 @@
 **/
 
 :root {
-    --color--dark: #212529;
+    --color--dark: #0d0c22;
 }
 
 /**
- * FORM ELEMENTS
+ * TEXT
 **/
 
-button {
-    font-weight: 300;
-    background-color: var(--color--dark);
+h1,
+h1 span,
+h2,
+h2 span {
+ color: var(--color--dark)!important;
+ font-weight: 600;
+}
+
+/**
+ * EXPANDED NAV MENU
+**/
+
+.MuiDrawer-root .navbar-brand {
+ opacity: 0;
+}
+
+.MuiDrawer-root .css-vaawn3 {
+ padding-left: 32px;
+ padding-right: 32px;
+}
+
+.MuiDrawer-root hr {
+ margin-top: 20px!important;
 }

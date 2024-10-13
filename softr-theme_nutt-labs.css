@@ -1,52 +1,11 @@
-/**
- * VARIABLES
-**/
+/* --------------------------------------
+ * Variables
+** -------------------------------------- */
 
 :root {
     --color--dark: #0d0c22;
 }
 
-/**
- * TEXT
-**/
-
-h1,
-h1 span,
-h2,
-h2 span {
- color: var(--color--dark)!important;
- font-weight: 600;
-}
-
-/**
- * EXPANDED NAV MENU
-**/
-
-.MuiDrawer-root .navbar-brand {
- opacity: 0;
-}
-
-.MuiDrawer-root .css-vaawn3 {
- padding-left: 32px;
- padding-right: 32px;
-}
-
-.MuiDrawer-root a.MuiButtonBase-root {
- padding: 8px 0;
-}
-
-.MuiDrawer-root a.MuiButtonBase-root span {
- padding: 0;
-}
-
-.MuiDrawer-root hr {
- margin-top: 20px!important;
-}
-
-/**
- * LISTS: GRIDS
-**/
-
-div[id*="grid"] div[role=list] {
- gap: 26px!important;
-}
+/* --------------------------------------
+ * Block > List > Grid
+** -------------------------------------- */

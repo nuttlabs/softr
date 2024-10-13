@@ -31,6 +31,14 @@ h2 span {
  padding-right: 32px;
 }
 
+.MuiDrawer-root a.MuiButtonBase-root {
+ padding: 8px 0;
+}
+
+.MuiDrawer-root a.MuiButtonBase-root span {
+ padding: 0;
+}
+
 .MuiDrawer-root hr {
  margin-top: 20px!important;
 }

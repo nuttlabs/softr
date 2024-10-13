@@ -3,7 +3,7 @@
  *--------------------------------------*/
 
 html {
-  --color--dark: #0d0c22;
+    --color--dark: #0d0c22;
 }
 
 /*--------------------------------------
@@ -11,16 +11,44 @@ html {
  *--------------------------------------*/
 
 h2 {
-  font-size: 28px !important;
+    font-size: 28px !important;
 }
 
 /*--------------------------------------
  * Header
  *--------------------------------------*/
 
-/* Section after */
-div[category="Header"] + div[class^="block"] > section {
-  padding-top: 20px;
+.MuiDrawer-root .navbar-brand {
+    opacity: 0;
+}
+
+/* Drawer: Item stack */
+.MuiDrawer-root>div:nth-of-type(3)>div>div>div:nth-of-type(2) {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+}
+
+/* Drawer: Reset item spacing */
+.MuiDrawer-root>div:nth-of-type(3)>div>div>div:nth-of-type(2) div,
+.MuiDrawer-root>div:nth-of-type(3)>div>div>div:nth-of-type(2) a {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+/* Drawer: Link spans */
+.MuiDrawer-root>div:nth-of-type(3)>div>div>div:nth-of-type(2) a>span:first-of-type {
+    line-height: 1;
+    padding: 10px 0 !important;
+    color: var(--color--dark);
+}
+
+.MuiDrawer-root hr {
+    margin: 14px 0 !important;
+}
+
+/* Section after header */
+div[category="Header"]+div[class^="block"]>section {
+    padding-top: 20px;
 }
 
 /*--------------------------------------
@@ -28,9 +56,9 @@ div[category="Header"] + div[class^="block"] > section {
  *--------------------------------------*/
 
 /* Title */
-div[category="List"] > section > div > div > h2 {
-  text-align: center !important;
-  margin-bottom: 30px;
+div[category="List"]>section>div>div>h2 {
+    text-align: center !important;
+    margin-bottom: 30px;
 }
 
 /*--------------------------------------
@@ -38,49 +66,49 @@ div[category="List"] > section > div > div > h2 {
  *--------------------------------------*/
 
 div[id*="grid"] div[role="list"] {
-  gap: 26px;
+    gap: 26px;
 }
 
 div[id*="grid"] div[role="listitem"] {
-  background: #ffffff;
+    background: #ffffff;
 }
 
-div[id*="grid"] div[role="listitem"] > div:not(:first-of-type) {
-  margin: auto 24px;
+div[id*="grid"] div[role="listitem"]>div:not(:first-of-type) {
+    margin: auto 24px;
 }
 
-div[id*="grid"] div[role="listitem"] > div:last-of-type {
-  margin-bottom: 5px;
+div[id*="grid"] div[role="listitem"]>div:last-of-type {
+    margin-bottom: 5px;
 }
 
 /* Background gradients */
 
-div[id*="grid"] div[role="listitem"]:first-of-type > div:first-of-type,
-div[id*="grid"] div[role="listitem"]:nth-of-type(6n + 1) > div:first-of-type {
-  background: linear-gradient(45deg, #fbf6ee 20%, #d0eef2 80%, #cadafa 100%);
+div[id*="grid"] div[role="listitem"]:first-of-type>div:first-of-type,
+div[id*="grid"] div[role="listitem"]:nth-of-type(6n + 1)>div:first-of-type {
+    background: linear-gradient(45deg, #fbf6ee 20%, #d0eef2 80%, #cadafa 100%);
 }
 
-div[id*="grid"] div[role="listitem"]:nth-of-type(2) > div:first-of-type,
-div[id*="grid"] div[role="listitem"]:nth-of-type(6n + 2) > div:first-of-type {
-  background: linear-gradient(45deg, #cadafa 10%, #fcf0d5 60%, #fbf6ee 100%);
+div[id*="grid"] div[role="listitem"]:nth-of-type(2)>div:first-of-type,
+div[id*="grid"] div[role="listitem"]:nth-of-type(6n + 2)>div:first-of-type {
+    background: linear-gradient(45deg, #cadafa 10%, #fcf0d5 60%, #fbf6ee 100%);
 }
 
-div[id*="grid"] div[role="listitem"]:nth-of-type(3) > div:first-of-type,
-div[id*="grid"] div[role="listitem"]:nth-of-type(6n + 3) > div:first-of-type {
-  background: linear-gradient(45deg, #fbf6ee 0, #f5e1f2 60%, #cadafa 100%);
+div[id*="grid"] div[role="listitem"]:nth-of-type(3)>div:first-of-type,
+div[id*="grid"] div[role="listitem"]:nth-of-type(6n + 3)>div:first-of-type {
+    background: linear-gradient(45deg, #fbf6ee 0, #f5e1f2 60%, #cadafa 100%);
 }
 
-div[id*="grid"] div[role="listitem"]:nth-of-type(4) > div:first-of-type,
-div[id*="grid"] div[role="listitem"]:nth-of-type(6n + 4) > div:first-of-type {
-  background: linear-gradient(-45deg, #fbf6ee 20%, #d0eef2 80%, #cadafa 100%);
+div[id*="grid"] div[role="listitem"]:nth-of-type(4)>div:first-of-type,
+div[id*="grid"] div[role="listitem"]:nth-of-type(6n + 4)>div:first-of-type {
+    background: linear-gradient(-45deg, #fbf6ee 20%, #d0eef2 80%, #cadafa 100%);
 }
 
-div[id*="grid"] div[role="listitem"]:nth-of-type(5) > div:first-of-type,
-div[id*="grid"] div[role="listitem"]:nth-of-type(6n + 6) > div:first-of-type {
-  background: linear-gradient(-45deg, #cadafa 10%, #fcf0d5 60%, #fbf6ee 100%);
+div[id*="grid"] div[role="listitem"]:nth-of-type(5)>div:first-of-type,
+div[id*="grid"] div[role="listitem"]:nth-of-type(6n + 6)>div:first-of-type {
+    background: linear-gradient(-45deg, #cadafa 10%, #fcf0d5 60%, #fbf6ee 100%);
 }
 
-div[id*="grid"] div[role="listitem"]:nth-of-type(6) > div:first-of-type,
-div[id*="grid"] div[role="listitem"]:nth-of-type(6n + 6) > div:first-of-type {
-  background: linear-gradient(-135deg, #fbf6ee 0, #f5e1f2 60%, #cadafa 100%);
+div[id*="grid"] div[role="listitem"]:nth-of-type(6)>div:first-of-type,
+div[id*="grid"] div[role="listitem"]:nth-of-type(6n + 6)>div:first-of-type {
+    background: linear-gradient(-135deg, #fbf6ee 0, #f5e1f2 60%, #cadafa 100%);
 }

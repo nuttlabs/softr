@@ -4,6 +4,7 @@
 
 html {
     --color--dark: #0d0c22;
+    --color--eggshell: #FFFEFA;
 }
 
 /*--------------------------------------
@@ -11,35 +12,40 @@ html {
  *--------------------------------------*/
 
 /*--------------------------------------
+ * Root + Body
+ *--------------------------------------*/
+
+html,
+body {}
+
+/*--------------------------------------
  * Header
  *--------------------------------------*/
 
-.MuiDrawer-root .navbar-brand {
-    opacity: 0;
+div[category="Header"],
+div[category="Header"] div,
+div[category="Header"] div.sw-background-color-ffffff {
+    background-color: var(--color--eggshell) !important;
 }
 
-/* Drawer: Item stack */
-.MuiDrawer-root>div:nth-of-type(3)>div>div>div:nth-of-type(2) {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+div[category=Header] a span {
+    color: var(--color--dark) !important;
 }
 
-/* Drawer: Reset item spacing */
-.MuiDrawer-root>div:nth-of-type(3)>div>div>div:nth-of-type(2) div,
-.MuiDrawer-root>div:nth-of-type(3)>div>div>div:nth-of-type(2) a {
-    padding: 0 !important;
-    margin: 0 !important;
+#header-vertical {
+    width: 250px !important;
 }
 
-/* Drawer: Link spans */
-.MuiDrawer-root>div:nth-of-type(3)>div>div>div:nth-of-type(2) a>span:first-of-type {
-    line-height: 1;
-    padding: 10px 0 !important;
-    color: var(--color--dark);
+#header-vertical~div {
+    margin-left: 250px !important;
 }
 
-.MuiDrawer-root hr {
-    margin: 14px 0 !important;
+#header-vertical .navbar-brand {
+    margin: 20px 0;
+}
+
+#header-vertical a span {
+    padding-left: 10px;
 }
 
 /*--------------------------------------
@@ -52,7 +58,7 @@ div[category="List"]>section>div>div>h2 {
 }
 
 /* First Title */
-#header+div[category="List"]>section>div>div>h2 {
+div[category=Header]+div[category="List"]>section>div>div>h2 {
     text-align: center !important;
     margin-bottom: 30px;
     font-size: 28px;

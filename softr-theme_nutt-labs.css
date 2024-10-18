@@ -136,6 +136,11 @@ div[id*="grid"] div[role="listitem"]:nth-of-type(6n + 6)>div:first-of-type {
  * Inboxes
  *--------------------------------------*/
 
+div[id*=inbox][category=Inbox],
+div[id*=inbox][category=Inbox] {
+    background-color: var(--color--eggshell) !important;
+}
+
 div[id*=inbox][category=Inbox]>section {
     padding-top: 50px !important;
 }

@@ -70,7 +70,8 @@ div[category="List"]>section>div>div>h2 {
 }
 
 /* First Title */
-div[category=Header]+div[category="List"]>section>div>div>h2 {
+div[category=Header]+div[category="List"]>section>div>div>h2,
+div[category=Header]+div[category="Inbox"]>section>div>div>h2 {
     text-align: center !important;
     margin-bottom: 30px;
     font-size: 28px;
@@ -134,6 +135,10 @@ div[id*="grid"] div[role="listitem"]:nth-of-type(6n + 6)>div:first-of-type {
 /*--------------------------------------
  * Inboxes
  *--------------------------------------*/
+
+div[id*=inbox][category=Inbox]>section {
+    padding-top: 50px !important;
+}
 
 /* Hide title in main post */
 .inbox-list-container>.MuiGrid-container>.MuiGrid-item:nth-of-type(2) .label-wrapper:first-child {

@@ -11,6 +11,18 @@ html {
  * Typography
  *--------------------------------------*/
 
+h3 {
+    font-size: 24px;
+}
+
+.inbox-list-container .MuiGrid-item:nth-child(2) h3 {
+    margin-bottom: 16px !important;
+}
+
+.inbox-list-container .MuiGrid-item:nth-child(2) h3:not(:first-child) {
+    margin-top: 34px;
+}
+
 /*--------------------------------------
  * Root + Body
  *--------------------------------------*/
@@ -49,7 +61,7 @@ div[category=Header] a span {
 }
 
 /*--------------------------------------
- * All Lists
+ * All Database Layouts
  *--------------------------------------*/
 
 /* All list titles */
@@ -69,13 +81,13 @@ div[category=Header]+div[category="List"]>section>div>div>h2 {
     font-size: 24px !important;
 }
 
-/* List item background */
+/* Item background */
 div[role="listitem"] {
     background: #ffffff !important;
 }
 
 /*--------------------------------------
- * Lists > Grids
+ * Grids
  *--------------------------------------*/
 
 /* Card title margin */
@@ -117,4 +129,13 @@ div[id*="grid"] div[role="listitem"]:nth-of-type(6n + 6)>div:first-of-type {
 div[id*="grid"] div[role="listitem"]:nth-of-type(6)>div:first-of-type,
 div[id*="grid"] div[role="listitem"]:nth-of-type(6n + 6)>div:first-of-type {
     background: linear-gradient(-135deg, #fbf6ee 0, #f5e1f2 60%, #cadafa 100%);
+}
+
+/*--------------------------------------
+ * Inboxes
+ *--------------------------------------*/
+
+/* Hide title in main post */
+.inbox-list-container>.MuiGrid-container>.MuiGrid-item:nth-of-type(2) .label-wrapper:first-child {
+    display: none;
 }

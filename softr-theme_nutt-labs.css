@@ -137,8 +137,13 @@ div[id*="grid"] div[role="listitem"]:nth-of-type(6n + 6)>div:first-of-type {
  *--------------------------------------*/
 
 div[id*=inbox][category=Inbox],
-div[id*=inbox][category=Inbox] {
+div[id*=inbox][category=Inbox] .MuiGrid-item div {
     background-color: var(--color--eggshell) !important;
+}
+
+div[id*=inbox][category=Inbox] .MuiGrid-item div.css-1cha9tj,
+div[id*=inbox][category=Inbox] .MuiGrid-item div.css-1cha9tj div {
+    background-color: rgb(246 244 244) !important;
 }
 
 div[id*=inbox][category=Inbox]>section {

@@ -84,6 +84,10 @@ div[role="listitem"] {
     background: #ffffff !important;
 }
 
+div[category="List"] p {
+    font-size: 14px !important;
+}
+
 /*--------------------------------------
  * Grids
  *--------------------------------------*/

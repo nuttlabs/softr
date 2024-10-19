@@ -53,7 +53,7 @@ div[category=Header] a span {
 }
 
 /*--------------------------------------
- * All Database Layouts
+ * All List Layouts
  *--------------------------------------*/
 
 /* All list titles */
@@ -71,7 +71,7 @@ div[category=Header]+div[category="Inbox"]>section>div>div>h2 {
 
 /* Other (not first) list titles */
 #page-content div[category="List"]:not(:nth-of-type(2))>section>div>div>h2 {
-    font-size: 24px !important;
+    font-size: 25px !important;
 }
 
 /* Item background */
@@ -152,8 +152,8 @@ div[id*=inbox][category=Inbox]>section {
  *--------------------------------------*/
 
 div[category="List Details"] h1 {
-    font-size: 34px !important;
-    letter-spacing: -.5px;
+    font-size: 36px !important;
+    letter-spacing: -.2px;
     font-weight: 700 !important;
 }
 

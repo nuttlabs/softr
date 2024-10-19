@@ -142,11 +142,6 @@ div[id*=inbox][category=Inbox]>section {
     padding-top: 50px !important;
 }
 
-/* Hide title in main post */
-.inbox-list-container>.MuiGrid-container>.MuiGrid-item:nth-of-type(2) .label-wrapper:first-child {
-    display: none;
-}
-
 /*--------------------------------------
  * List Details (and Inbox Bodies)
  *--------------------------------------*/
@@ -155,6 +150,7 @@ div[category="List Details"] h1 {
     font-size: 40px !important;
     letter-spacing: -.2px;
     font-weight: 700 !important;
+    line-height: 1 !important;
 }
 
 div[category="List Details"] h3,
@@ -165,4 +161,10 @@ div[category="List Details"] h3,
 div[category="List Details"] h3,
 .inbox-list-container .MuiGrid-item:nth-child(2) h3:not(:first-child) {
     margin-top: 34px;
+}
+
+div[category="List Details"] iframe,
+div[category="Inbox"] iframe {
+    margin: 20px auto !important;
+    display: block;
 }

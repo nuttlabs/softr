@@ -32,7 +32,7 @@ body {}
  *--------------------------------------*/
 
 div[category="Header"],
-div[category="Header"] div,
+div[category="Header"] div:not(.MuiBackdrop-invisible, .MuiPopover-root),
 div[category="Header"] div.sw-background-color-ffffff {
     background-color: var(--color--eggshell) !important;
 }

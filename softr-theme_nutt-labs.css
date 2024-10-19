@@ -153,6 +153,7 @@ div[id*=inbox][category=Inbox]>section {
 
 div[category="List Details"] h1 {
     font-size: 34px !important;
+    letter-spacing: -.5px;
     font-weight: 700 !important;
 }
 

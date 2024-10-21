@@ -81,7 +81,7 @@ div[category=Header]+div[category="Inbox"]>section>div>div>h2 {
 }
 
 /* Item background */
-div[role="listitem"] {
+div[category="List"] div[role="listitem"] {
     background: #ffffff !important;
 }
 
@@ -161,7 +161,8 @@ div[category="List Details"] {
     margin: 0 auto;
 }
 
-div[category="List Details"] div {
+div[category="List Details"] .sections-wrapper section,
+div[category="List Details"] .sections-wrapper section div {
     margin-left: auto;
     margin-right: auto;
     width: 100%;

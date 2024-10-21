@@ -1,3 +1,21 @@
 div[id="home/logo"] .container {
   max-width: 500px;
 }
+
+div[category="List Details"] section {
+  gap: 50px!important;
+}
+
+div[category="List Details"] section div {
+  gap: 0px!important;
+}
+
+div[category="List Details"] section h1 {
+  font-size: 28px!important;
+}
+
+div[category="List Details"] section p {
+  font-size: 16px;
+  max-width: 750px;
+  line-height: 150%;
+}

@@ -3,11 +3,8 @@ div[id="home/logo"] .container {
 }
 
 div[category="List Details"] section {
-  gap: 50px!important;
-}
-
-div[category="List Details"] section div {
-  gap: 0px!important;
+  gap: 40px!important;
+  align-items: center;
 }
 
 div[category="List Details"] section h1 {

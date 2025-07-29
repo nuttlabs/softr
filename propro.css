@@ -3,9 +3,11 @@
 ** -------------------------------------------------------- */
 
 :root {
-    --color--darkBlue: #091717;
-    --color--gray: #6b6b6b;
-    --color--lightGray: #e4e3d4;
+    --color--darkBlue: rgb(9, 23, 23);
+    --color--darkBlue--75pct: rgb(71, 81, 81);
+    --color--darkBlue--50pct: rgb(132, 139, 139);
+    --color--darkBlue--25pct: rgb(194, 197, 197);
+    --color--darkBlue--15pct: rgb(218, 220, 220);
 }
 
 /* -------------------------------------------------------- \\
@@ -41,16 +43,6 @@ div[data-testid=grid-item]:has( > a:hover) {
     padding-bottom: 18px;
 }
 
-/* Company */
-div[data-vertical-alignment=top] > div:first-child p {
-    color: rgba(9, 23, 23, .5);
-    font-size: 11px;
-    text-transform: uppercase;
-    font-weight: 600;
-    line-height: 1;
-}
-
-/* Item Name */
 div[data-testid=grid-item] div[data-vertical-alignment=top] h4 {
     margin: 6px 0 2px;
     font-size: 17px;
@@ -74,4 +66,17 @@ div[data-testid=grid-item] div[data-vertical-alignment=top] h4 {
 /* Hide unused div to prevent gap */
 div[data-testid=grid-item] div[data-vertical-alignment=bottom] > div:last-of-type {
     display: none;
+}
+
+/* -------------------------------------------------------- \\
+ * Specific Collection: #tool-gallery
+** -------------------------------------------------------- */
+
+/* Company */
+#tool-gallery div[data-vertical-alignment=top] > div:first-child p {
+    color: rgba(9, 23, 23, .5);
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1;
 }

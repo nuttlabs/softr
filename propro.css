@@ -3,12 +3,13 @@
 ** -------------------------------------------------------- */
 
 :root {
-    --color--darkBlue: rgb(9 23 23);
-    --color--darkBlue--75pct: rgb(71 81 81);
-    --color--darkBlue--64pct: rgb(98 107 107);
-    --color--darkBlue--50pct: rgb(132 139 139);
-    --color--darkBlue--25pct: rgb(194 197 197);
-    --color--darkBlue--15pct: rgb(218 220 220);
+    --perp--eggshell: #FBFAF4;
+    --perp--eggshell--darker: #c9c8bb;
+    --perp--lightGray: #8f8f8f;
+    --perp: #21808d;
+    --perp--dark: #13343b;
+    --perp--darkest: #091717;
+    --perp--darkest--rgb: 9, 23, 23;
 }
 
 /* -------------------------------------------------------- \\
@@ -19,12 +20,22 @@ div[data-testid=vertical-filters-list] {
     max-width: 200px!important;
 }
 
+
+/* Heading */
 div[data-testid=vertical-filters-list] > div > div {
     margin-bottom: 6px;
 }
 
 div[data-testid=vertical-filters-list] li > button > div {
     font-size: 12px;
+}
+
+div[data-testid=vertical-filters-list] li button:hover,
+div[data-testid=vertical-filters-list] li button:hover:before,
+div[data-testid=vertical-filters-list] li button[data-active=true] {
+    color: var(--perp);
+    border-color: var(--perp)!important;
+    background: transparent!important;
 }
 
 div[data-testid=vertical-filters-list] li button[data-active=true]:before {
@@ -35,23 +46,45 @@ div[data-testid=vertical-filters-list] li button[data-active=true]:before {
  * Gallery Cards
 ** -------------------------------------------------------- */
 
+div.softr-grid-container div[data-testid=grid-item] {
+    border: 2px solid #FFF;
+    transition: border-color .5s;
+}
+
 div[data-testid=grid-item]:has( > a:hover) {
     background: white!important;
+    border-color: var(--perp--dark);
 }
 
 .softr-grid-container div[data-testid=grid-item] > div {
     padding-top: 18px;
-    padding-bottom: 18px;
+    padding-bottom: 6px;
+}
+
+/* Above-title text */
+#tool-gallery div[data-vertical-alignment=top] > div:first-child p {
+    font-size: 11px;
+    margin: 2px 0 5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 1;
+    color: var(--perp);
 }
 
 div[data-testid=grid-item] div[data-vertical-alignment=top] h4 {
-    margin: 6px 0 2px;
+    margin: 0 0 2px;
+    line-height: 1.25;
     font-size: 17px;
 }
 
+div.softr-grid-container div[data-testid=grid-item] p:not(:first-of-type) {
+    color: var(--perp--darkest);
+    opacity: .4;
+}
+
 .nutt__customTags span {
-    color: rgba(9, 23, 23, .49);
-    border: 1px solid rgba(9, 23, 23, .27);
+    color: var(--perp--lightGray);
+    border: .5px solid;
     padding: 5px 7px;
     margin-top: 6px;
     border-radius: 5px;
@@ -60,21 +93,17 @@ div[data-testid=grid-item] div[data-vertical-alignment=top] h4 {
     letter-spacing: -.1px;
     line-height: 1;
     font-weight: 400;
-    font-size: 10px;
+    font-size: 9px;
+    transition: color .5s;
+}
+
+div[data-testid=grid-item]:has( > a:hover) .nutt__customTags span {
+    color: var(--perp);
 }
 
 /* -------------------------------------------------------- \\
  * Specific Collection: #tool-gallery
 ** -------------------------------------------------------- */
-
-/* Company */
-#tool-gallery div[data-vertical-alignment=top] > div:first-child p {
-    color: var(--color--darkBlue--64pct);
-    font-size: 11px;
-    text-transform: uppercase;
-    font-weight: 600;
-    line-height: 1;
-}
 
 /* Hide unused div to prevent gap */
 #tools-gallery div[data-testid=grid-item] div[data-vertical-alignment=bottom] > div:last-of-type {

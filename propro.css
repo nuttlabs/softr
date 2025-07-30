@@ -37,11 +37,11 @@ h1, h2, h3, h4 {
 h1 {
     letter-spacing: -.1px;
     line-height: 1.1;
-    margin-bottom: 34px!important;
+    margin-bottom: 33px!important;
 }
 
 h5 {
-    font-weight: 600!important;
+    font-weight: 500!important;
 }
 
 @media screen and (min-width: 768px) {
@@ -63,36 +63,20 @@ h5 {
 ** -------------------------------------------------------------- */
 
 /* ----------------------- \\
- * Vertical Filters
+ * Dropdown Filter
 ** ----------------------- */
 
-div[data-testid=vertical-filters-list] {
-    max-width: 200px!important;
+div[data-testid=horizontal-filters-list] button {
+    width: 250px!important;
 }
 
-
-/* Heading */
-div[data-testid=vertical-filters-list] > div > div {
-    margin-bottom: 6px;
+div[data-testid=horizontal-filters-list] button:hover:before {
+    background-color: var(--perp--eggshell)!important;
 }
 
-div[data-testid=vertical-filters-list] li > button > div {
-    font-size: 12px;
-}
-
-div[data-testid=vertical-filters-list] li button:hover,
-div[data-testid=vertical-filters-list] li button:hover:before {
-    color: var(--perp--dark);
-    border-color: var(--perp--dark)!important;
-    background: transparent!important;
-}
-
-div[data-testid=vertical-filters-list] li button[data-active=true] {
-    color: var(--perp);
-}
-
-div[data-testid=vertical-filters-list] li button[data-active=true]:before {
-    border: 1px solid var(--perp)!important;
+/* Hide search option on desktop */
+div[data-testid=horizontal-filters-list] button + div > div > div:first-child {
+    display: none;
 }
 
 /* ----------------------- \\
@@ -110,8 +94,7 @@ div[data-testid=grid-item]:has( > a:hover) {
 }
 
 .softr-grid-container div[data-testid=grid-item] > div {
-    padding-top: 18px;
-    padding-bottom: 6px;
+    padding: 18px 20px 6px;
 }
 
 /* Above-title text */
@@ -126,14 +109,16 @@ div[data-testid=grid-item]:has( > a:hover) {
 
 /* Title */
 div[data-testid=grid-item] div[data-vertical-alignment=top] h4 {
-    margin: 0 0 2px;
+    margin: 0 0 3px;
     line-height: 1.25;
-    font-size: 25px;
+    font-size: 26px;
 }
 
-div.softr-grid-container div[data-testid=grid-item] p:not(:first-of-type) {
+div.softr-grid-container div[data-testid=grid-item] div[data-vertical-alignment=top] > div:not(:first-child) p {
     color: var(--perp--darkest);
-    opacity: .4;
+    opacity: .6;
+    font-size: 1rem!important;
+    line-height: 1.4;
 }
 
 /* Custom tags from Notion formula */
@@ -163,13 +148,42 @@ div[data-testid=grid-item]:has( > a:hover) .nutt__customTags span {
 ** -------------------------------------------------------------- */
 
 /* ----------------------- \\
+ * #header-simple
+** ----------------------- */
+
+#header-simple {
+    background: var(--perp--eggshell)!important;
+}
+
+.headerSimple__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header-simple img {
+    width: 70%;
+    max-width: 260px;
+}
+
+.headerSimple__button {
+    border: 1px solid;
+    line-height: 1!important;
+    color: var(--perp--dark);
+    border-radius: 100px;
+    padding: 11px 20px;
+    font-size: 15px;
+}
+
+/* ----------------------- \\
  * #page-titles
 ** ----------------------- */
 
 #page-titles section {
-    padding-bottom: 54px!important;
+    padding: 44px 0 50px!important;
 }
 
 #page-titles h5 {
-    color: var(--perp--lightGray);
+    color: var(--perp--dark);
+    opacity: .5;
 }

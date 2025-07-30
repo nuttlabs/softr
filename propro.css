@@ -1,8 +1,12 @@
-/* -------------------------------------------------------- \\
+/* -------------------------------------------------------------- \\
+ * -------------------------------------------------------------- //
  * Variables
-** -------------------------------------------------------- */
+ * -------------------------------------------------------------- \\
+** -------------------------------------------------------------- */
 
 :root {
+
+    /* Colors */
     --perp--eggshell: #FBFAF4;
     --perp--eggshell--darker: #c9c8bb;
     --perp--lightGray: #8f8f8f;
@@ -10,11 +14,57 @@
     --perp--dark: #13343b;
     --perp--darkest: #091717;
     --perp--darkest--rgb: 9, 23, 23;
+
 }
 
-/* -------------------------------------------------------- \\
+/* -------------------------------------------------------------- \\
+ * -------------------------------------------------------------- //
+ * Typography
+ * -------------------------------------------------------------- \\
+** -------------------------------------------------------------- */
+
+html {
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Instrument Serif', system-ui;
+    font-weight: normal!important;
+    margin-left: auto!important;
+    margin-right: auto!important;
+}
+
+h1 {
+    letter-spacing: -.1px;
+    line-height: 1.1;
+    margin-bottom: 34px!important;
+}
+
+h5 {
+    font-weight: 600!important;
+}
+
+@media screen and (min-width: 768px) {
+    
+    h1 {
+       font-size: 86px!important; 
+    }
+
+    h5 {
+        font-size: 24px!important;
+    }
+
+}
+
+/* -------------------------------------------------------------- \\
+ * -------------------------------------------------------------- //
+ * Galleries
+ * -------------------------------------------------------------- \\
+** -------------------------------------------------------------- */
+
+/* ----------------------- \\
  * Vertical Filters
-** -------------------------------------------------------- */
+** ----------------------- */
 
 div[data-testid=vertical-filters-list] {
     max-width: 200px!important;
@@ -31,20 +81,23 @@ div[data-testid=vertical-filters-list] li > button > div {
 }
 
 div[data-testid=vertical-filters-list] li button:hover,
-div[data-testid=vertical-filters-list] li button:hover:before,
-div[data-testid=vertical-filters-list] li button[data-active=true] {
-    color: var(--perp);
-    border-color: var(--perp)!important;
+div[data-testid=vertical-filters-list] li button:hover:before {
+    color: var(--perp--dark);
+    border-color: var(--perp--dark)!important;
     background: transparent!important;
 }
 
-div[data-testid=vertical-filters-list] li button[data-active=true]:before {
-    border-width: 1px !important;
+div[data-testid=vertical-filters-list] li button[data-active=true] {
+    color: var(--perp);
 }
 
-/* -------------------------------------------------------- \\
+div[data-testid=vertical-filters-list] li button[data-active=true]:before {
+    border: 1px solid var(--perp)!important;
+}
+
+/* ----------------------- \\
  * Gallery Cards
-** -------------------------------------------------------- */
+** ----------------------- */
 
 div.softr-grid-container div[data-testid=grid-item] {
     border: 2px solid #FFF;
@@ -53,7 +106,7 @@ div.softr-grid-container div[data-testid=grid-item] {
 
 div[data-testid=grid-item]:has( > a:hover) {
     background: white!important;
-    border-color: var(--perp--dark);
+    border-color: var(--perp);
 }
 
 .softr-grid-container div[data-testid=grid-item] > div {
@@ -62,7 +115,7 @@ div[data-testid=grid-item]:has( > a:hover) {
 }
 
 /* Above-title text */
-#tool-gallery div[data-vertical-alignment=top] > div:first-child p {
+.softr-grid-container div[data-testid=grid-item] div[data-vertical-alignment=top] > div:first-child p {
     font-size: 11px;
     margin: 2px 0 5px;
     text-transform: uppercase;
@@ -71,10 +124,11 @@ div[data-testid=grid-item]:has( > a:hover) {
     color: var(--perp);
 }
 
+/* Title */
 div[data-testid=grid-item] div[data-vertical-alignment=top] h4 {
     margin: 0 0 2px;
     line-height: 1.25;
-    font-size: 17px;
+    font-size: 25px;
 }
 
 div.softr-grid-container div[data-testid=grid-item] p:not(:first-of-type) {
@@ -82,6 +136,7 @@ div.softr-grid-container div[data-testid=grid-item] p:not(:first-of-type) {
     opacity: .4;
 }
 
+/* Custom tags from Notion formula */
 .nutt__customTags span {
     color: var(--perp--lightGray);
     border: .5px solid;
@@ -101,11 +156,20 @@ div[data-testid=grid-item]:has( > a:hover) .nutt__customTags span {
     color: var(--perp);
 }
 
-/* -------------------------------------------------------- \\
- * Specific Collection: #tool-gallery
-** -------------------------------------------------------- */
+/* -------------------------------------------------------------- \\
+ * -------------------------------------------------------------- //
+ * Custom Blocks
+ * -------------------------------------------------------------- \\
+** -------------------------------------------------------------- */
 
-/* Hide unused div to prevent gap */
-#tools-gallery div[data-testid=grid-item] div[data-vertical-alignment=bottom] > div:last-of-type {
-    display: none;
+/* ----------------------- \\
+ * #page-titles
+** ----------------------- */
+
+#page-titles section {
+    padding-bottom: 54px!important;
+}
+
+#page-titles h5 {
+    color: var(--perp--lightGray);
 }

@@ -3,12 +3,12 @@
 ** -------------------------------------------------------- */
 
 :root {
-    --color--darkBlue: rgb(9, 23, 23);
-    --color--darkBlue--75pct: rgb(71, 81, 81);
-    --color--darkBlue--64pct: rgb(98, 107, 107);
-    --color--darkBlue--50pct: rgb(132, 139, 139);
-    --color--darkBlue--25pct: rgb(194, 197, 197);
-    --color--darkBlue--15pct: rgb(218, 220, 220);
+    --color--darkBlue: rgb(9 23 23);
+    --color--darkBlue--75pct: rgb(71 81 81);
+    --color--darkBlue--64pct: rgb(98 107 107);
+    --color--darkBlue--50pct: rgb(132 139 139);
+    --color--darkBlue--25pct: rgb(194 197 197);
+    --color--darkBlue--15pct: rgb(218 220 220);
 }
 
 /* -------------------------------------------------------- \\

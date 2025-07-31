@@ -28,6 +28,7 @@ html {
 }
 
 h1, h2, h3, h4 {
+    position: relative;
     font-family: 'Instrument Serif', system-ui;
     font-weight: normal!important;
     margin-left: auto!important;
@@ -37,23 +38,37 @@ h1, h2, h3, h4 {
 h1 {
     letter-spacing: -.1px;
     line-height: 1.1;
-    margin-bottom: 33px!important;
+    font-size: 46px!important;
+    margin-bottom: 16px!important;
 }
 
 h5 {
     font-weight: 500!important;
+    font-size: 22px!important;
 }
 
 @media screen and (min-width: 768px) {
     
     h1 {
        font-size: 86px!important; 
+        margin-bottom: 30px!important;
     }
 
     h5 {
-        font-size: 24px!important;
+        font-size: 27px!important;
     }
 
+}
+
+/* -------------------------------------------------------------- \\
+ * -------------------------------------------------------------- //
+ * High-Level Infrastructure
+ * -------------------------------------------------------------- \\
+** -------------------------------------------------------------- */
+
+.container {
+    width: 96%;
+    max-width: 1280px;
 }
 
 /* -------------------------------------------------------------- \\
@@ -67,16 +82,84 @@ h5 {
 ** ----------------------- */
 
 div[data-testid=horizontal-filters-list] button {
-    width: 250px!important;
+    font-size: 14px!important;
+    line-height: 1.4em!important;
+    padding: 10px 13px!important;
+    width: calc((100% - 32px) / 4 - 2px)!important;
 }
 
-div[data-testid=horizontal-filters-list] button:hover:before {
-    background-color: var(--perp--eggshell)!important;
+div[data-testid=horizontal-filters-list] button:before {
+    background: none!important;
 }
 
-/* Hide search option on desktop */
-div[data-testid=horizontal-filters-list] button + div > div > div:first-child {
-    display: none;
+div[data-testid=horizontal-filters-list] button svg {
+    width: 18px;
+}
+
+/* Enabled filter count */
+div[data-testid=horizontal-filters-list] button > div + div {
+    font-size: 10px!important;
+    line-height: 20px!important;
+    width: 20px!important;
+    font-weight: 600!important;
+    background-color: var(--perp--dark)!important;
+    position: absolute!important;
+    right: 11px;
+    z-index: 1;
+}
+
+@media screen and (max-width: 999px) {
+    
+    div[data-testid=horizontal-filters-list] button {
+        width: calc((100% - 32px) / 3 - 2px)!important;
+    }
+    
+}
+
+@media screen and (min-width: 768px) {
+
+    div[data-testid=horizontal-filters-list] {
+        margin-bottom: 4px;
+    }
+    
+    div[data-testid=horizontal-filters-list] > div {
+        width: 100%;
+    }
+    
+    div[data-testid=horizontal-filters-list] button {
+        min-width: 240px;
+    }
+    
+    div[data-testid=horizontal-filters-list] button:hover:before {
+        background-color: var(--perp--eggshell)!important;
+    }
+
+    /* Hide search option on desktop */
+    div[data-testid=horizontal-filters-list] button + div > div > div:first-child {
+        display: none;
+    }
+    
+}
+
+/* ----------------------- \\
+ * Gallery Container
+** ----------------------- */
+
+.softr-grid-container {
+    grid-template-columns: repeat(4, 1fr)!important;
+}
+
+@media screen and (max-width: 999px) {
+    .softr-grid-container {
+        grid-template-columns: repeat(3, 1fr)!important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .softr-grid-container {
+        display: flex!important;
+        flex-direction: column;
+    }
 }
 
 /* ----------------------- \\
@@ -94,24 +177,24 @@ div[data-testid=grid-item]:has( > a:hover) {
 }
 
 .softr-grid-container div[data-testid=grid-item] > div {
-    padding: 18px 20px 6px;
+    padding: 18px 20px 18px;
 }
 
 /* Above-title text */
 .softr-grid-container div[data-testid=grid-item] div[data-vertical-alignment=top] > div:first-child p {
-    font-size: 11px;
-    margin: 2px 0 5px;
+    font-size: 12px;
+    margin: 2px 0 6px;
     text-transform: uppercase;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1;
     color: var(--perp);
 }
 
 /* Title */
 div[data-testid=grid-item] div[data-vertical-alignment=top] h4 {
-    margin: 0 0 3px;
-    line-height: 1.25;
-    font-size: 26px;
+    margin: 0 0 4px;
+    line-height: 1.15;
+    font-size: 28px;
 }
 
 div.softr-grid-container div[data-testid=grid-item] div[data-vertical-alignment=top] > div:not(:first-child) p {
@@ -133,7 +216,7 @@ div.softr-grid-container div[data-testid=grid-item] div[data-vertical-alignment=
     letter-spacing: -.1px;
     line-height: 1;
     font-weight: 400;
-    font-size: 9px;
+    font-size: 10px;
     transition: color .5s;
 }
 
@@ -148,11 +231,25 @@ div[data-testid=grid-item]:has( > a:hover) .nutt__customTags span {
 ** -------------------------------------------------------------- */
 
 /* ----------------------- \\
+ * Animated Background
+** ----------------------- */
+
+body:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.dev/svgjs' width='1440' height='850' preserveAspectRatio='none' viewBox='0 0 1440 850'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1003%26quot%3b)' fill='none'%3e%3crect width='1440' height='850' x='0' y='0' fill='rgba(251%2c 250%2c 244%2c 1)'%3e%3c/rect%3e%3cpath d='M1328.3462880604332 193.0177281644523L1152.2456069867144 114.41147207340977 1166.9382853352322 282.34955406461853z' fill='rgba(33%2c 128%2c 141%2c 0.04)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1311.2467863605098 573.5219848147013L1455.607672027214 460.7348998135258 1342.8205870260385 316.37401414682154 1198.4597013593343 429.1610991479971z' fill='rgba(33%2c 128%2c 141%2c 0.04)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1375.108%2c768.56C1404.926%2c768.092%2c1430.624%2c747.739%2c1443.645%2c720.91C1455.214%2c697.073%2c1448.492%2c669.513%2c1433.916%2c647.387C1420.895%2c627.621%2c1398.775%2c617.248%2c1375.108%2c616.87C1350.669%2c616.479%2c1326.709%2c625.252%2c1312.95%2c645.453C1297.195%2c668.584%2c1290.125%2c698.139%2c1302.739%2c723.122C1316.499%2c750.374%2c1344.583%2c769.039%2c1375.108%2c768.56' fill='rgba(33%2c 128%2c 141%2c 0.04)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M234.58163957534597 444.213990658998L255.0729858944143 678.4311508399446 489.29014607536095 657.9398045208764 468.7987997562926 423.7226443399297z' fill='rgba(33%2c 128%2c 141%2c 0.04)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1293.482%2c464.494C1372.027%2c469.933%2c1460.913%2c462.874%2c1503.068%2c396.377C1547.273%2c326.646%2c1526.775%2c235.934%2c1482.586%2c166.193C1441.628%2c101.551%2c1369.988%2c63.909%2c1293.482%2c65.596C1219.855%2c67.22%2c1153.299%2c109.434%2c1118.295%2c174.228C1084.925%2c235.997%2c1092.505%2c310.353%2c1128.783%2c370.461C1163.794%2c428.47%2c1225.888%2c459.814%2c1293.482%2c464.494' fill='rgba(33%2c 128%2c 141%2c 0.04)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M407.3338936578193 563.3361582974113L227.09371742208833 598.3712994731496 262.1288585978266 778.6114757088806 442.3690348335576 743.5763345331422z' fill='rgba(33%2c 128%2c 141%2c 0.04)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M438.31 57.89 a165.68 165.68 0 1 0 331.36 0 a165.68 165.68 0 1 0 -331.36 0z' fill='rgba(33%2c 128%2c 141%2c 0.04)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M-115.15 279.33 a143.8 143.8 0 1 0 287.6 0 a143.8 143.8 0 1 0 -287.6 0z' fill='rgba(33%2c 128%2c 141%2c 0.04)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M1096.9629397863093 307.59489527688095L985.9300729073807 379.7004821225457 1149.6048866153421 510.19698901810636z' fill='rgba(33%2c 128%2c 141%2c 0.04)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1235.127%2c954.265C1301.952%2c950.098%2c1345.349%2c888.738%2c1373.687%2c828.075C1397.318%2c777.487%2c1395.554%2c719.923%2c1367.014%2c671.933C1339.14%2c625.062%2c1289.611%2c597.39%2c1235.127%2c595.087C1175.907%2c592.584%2c1115.802%2c610.936%2c1082.405%2c659.904C1044.45%2c715.554%2c1031.989%2c787.656%2c1063.011%2c847.449C1096.34%2c911.688%2c1162.897%2c958.769%2c1235.127%2c954.265' fill='rgba(33%2c 128%2c 141%2c 0.04)' class='triangle-float1'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1003'%3e%3crect width='1440' height='850' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+    background-size: cover;
+}
+
+/* ----------------------- \\
  * #header-simple
 ** ----------------------- */
 
 #header-simple {
-    background: var(--perp--eggshell)!important;
+    background: none!important;
 }
 
 .headerSimple__container {
@@ -162,17 +259,45 @@ div[data-testid=grid-item]:has( > a:hover) .nutt__customTags span {
 }
 
 #header-simple img {
-    width: 70%;
+    width: 50%;
     max-width: 260px;
 }
 
 .headerSimple__button {
-    border: 1px solid;
+    background: var(--perp--darkest);
     line-height: 1!important;
-    color: var(--perp--dark);
+    color: white;
     border-radius: 100px;
-    padding: 11px 20px;
+    padding: 14px 26px;
+    font-weight: 600;
     font-size: 15px;
+    transition: all .5s;
+    letter-spacing: -.1px;
+}
+
+.headerSimple__button:hover {
+    text-decoration: none;
+    color: white;
+    transform: scale(1.05);
+}
+
+@media screen and (max-width: 767px) {
+
+    #header-simple {
+        padding-top: 20px!important;
+    }
+
+    .headerSimple__container {
+    }
+
+    .headerSimple__button {
+        font-size: 13px;
+        color: var(--perp--dark);
+        background: none;
+        border: 1px solid;
+        padding: 10px 20px;
+    }
+    
 }
 
 /* ----------------------- \\
@@ -180,10 +305,18 @@ div[data-testid=grid-item]:has( > a:hover) .nutt__customTags span {
 ** ----------------------- */
 
 #page-titles section {
-    padding: 44px 0 50px!important;
+    padding: 48px 0 20px!important;
 }
 
 #page-titles h5 {
     color: var(--perp--dark);
     opacity: .5;
+}
+
+@media screen and (max-width: 767px) {
+
+    #page-titles section {
+        padding: 20px 0!important;
+    }
+    
 }
